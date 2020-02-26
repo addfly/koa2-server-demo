@@ -3,33 +3,29 @@ const Koa = require('koa');
 const app = new Koa();
 
 // 路由相关
-const Router = require('koa-router')
-const router = new Router()
+const Router = require('koa-router');
+const router = new Router();
 // 引入外部路由文件
-require('./routes/index.js')(router)
+require('./routes/index.js')(router);
 
 // post请求相关
-const bodyparser = require('koa-bodyparser')
+const bodyparser = require('koa-bodyparser');
 
-// 使用 mongoose 连接 MongoDB
-const mongoose = require('mongoose')
-require('./dblink/index.js')(mongoose)
-const userSchema=require('./dblink/user.js')(mongoose)
-const User=mongoose.model('User',userSchema)
+
 
 // 重定向到404页面
 const errorWebsite = ctx => {
-    ctx.status === 404 ? ctx.redirect('/404') : ''
+    ctx.status === 404 ? ctx.redirect('/404') : '';
 }
 
-app.use(bodyparser())
-app.use(router.routes())
+app.use(bodyparser());
+app.use(router.routes());
 // 设置HTTP请求方法限制
-app.use(router.allowedMethods())
-app.use(errorWebsite)
+app.use(router.allowedMethods());
+app.use(errorWebsite);
 
 
-app.listen(3000)
+app.listen(3000);
 
 
 

@@ -1,5 +1,7 @@
-
 const index = router => {
+    // 用户相关路由：注册
+    const user = require('./user/')(router)
+    
     router.get('/', ctx => {
         ctx.response.body = "hello koa2！";
         ctx.set('Cookie', '111');
