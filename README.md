@@ -29,3 +29,5 @@ koaServer
 └── util                              公用方法
 ```
 
+输入"genrsa -out rsa_private_key.pem 1024",回车，命令窗口如下，在bin目录下多了一个rsa_private_key.pem文件，
+输入"rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem"，回车，命令窗口如下，在bin目录下多了一个rsa_public_key.pem文件，

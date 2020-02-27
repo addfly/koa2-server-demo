@@ -17,8 +17,8 @@ mongoose.connection.on('error', (err) => {
 
 // 用户信息数据库操作
 const userMessage = require('./models/userMessage/')(mongoose);
-const UserAbout= require('./actions/userMessage/')(userMessage);
-const userAbout = new UserAbout();
+const AboutUser= require('./actions/userMessage/')(userMessage);
+const aboutUser = new AboutUser();
 
 
-module.exports = userAbout;
+module.exports = aboutUser;

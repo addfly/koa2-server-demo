@@ -1,22 +1,29 @@
 const userMessage = (mongoose) => {
-    const {Schema,model}= mongoose;
+    const {
+        Schema,
+        model
+    } = mongoose;
     // 规定用户注册信息的模式
     const userMessage = new Schema({
         username: {
             type: String,
             required: true
         },
-        password: {
+        encryptPassword: {
             type: String,
             required: true,
-            select: false
+            // select: false
         },
         phone: {
             type: Number,
             required: true
+        },
+        lastLogin:{
+            type:Date,
+            default:Date.now()
         }
     })
-    return model("userMessage",userMessage )
+    return model("userMessage", userMessage)
 }
 
-module.exports  = userMessage ;
+module.exports = userMessage;
