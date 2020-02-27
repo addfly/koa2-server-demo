@@ -5,6 +5,8 @@
 koa2（node.js）
 
 ## 版本说明
+- **2.1** 业务增加 
+  使用加盐算法加密存储用户密码，加入token，加入静态资源托管，加入上传文件功能
 - **2.0** 代码重构
   将数据库操作相关模块化，路由模块化
 - **1.0** 版本 
@@ -14,6 +16,8 @@ koa2（node.js）
 ```
 koaServer
 ├── app.js                            入口文件
+├── public                            静态资源
+│   ├── upload                        上传文件夹
 ├── dblink                        
 │   ├── actions                       数据库操作相关
 │   │   └── userMessage            
@@ -29,5 +33,3 @@ koaServer
 └── util                              公用方法
 ```
 
-输入"genrsa -out rsa_private_key.pem 1024",回车，命令窗口如下，在bin目录下多了一个rsa_private_key.pem文件，
-输入"rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem"，回车，命令窗口如下，在bin目录下多了一个rsa_public_key.pem文件，
